@@ -32,6 +32,14 @@ if st.button("Generate PDF"):
                            mime='application/pdf')
     else:
         st.error("Please add enough cards to generate a PDF (at least 8).")
+if st.button("Clear"):
+    st.session_state.clear()
 
-st.write(st.session_state)
+st.header("Preview")
+if 'cards' not in st.session_state:
+    st.write('Cards cleared.')
+else:
+    for q, a in st.session_state["cards"]:
+        st.write(f'Question : {q}')
+        st.write(f'Réponse : {a}')
 
