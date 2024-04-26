@@ -12,7 +12,7 @@ try:
         with col1:
             questions = [st.text_area(f"Question:", value=f'Q{i+1} : ', height=100) for i in range(8)]
         with col2:
-            answers = [st.text_area(f"Réponses:", value=f'R{i+1} : ', height=100) for i in range(8)]
+            answers = [st.text_area(f"Réponse:", value=f'R{i+1} : ', height=100) for i in range(8)]
         submitted = st.form_submit_button("Ajouter les cartes")
 
         if submitted:
@@ -45,4 +45,5 @@ try:
             st.write(f'Réponse : {a}')
 
 except Exception as e:
-    st.error(f"Une erreur s'est produite : {str(e)}")
+    st.error(f"Une erreur s'est produite : {str(e)}. Veuillez contacter les développeurs pour assistance.")
+
