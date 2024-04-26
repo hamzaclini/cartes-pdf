@@ -5,6 +5,8 @@ containing a set of flashcards with questions and answers in the
 ANKI style. The aim of this pdf is to be printed recto-verso with
 questions on one side and answer on the other side.
 
+This app can be accessed on streamlit [here](https://cartes-pdf.streamlit.app/)
+
 ## Use of FPDF package
 
 PDF formatting is defined in a .csv file using the template.py class from
