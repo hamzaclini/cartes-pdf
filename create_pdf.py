@@ -8,8 +8,8 @@ from fpdf import Template
 from io import BytesIO
 
 def create_pdf(cards):
-    pdf = Template(format="A4", orientation="P", title="ANKICards", author="Clinicog")
-    pdf.parse_csv("ANKIClinicogDOS.csv", delimiter=';')
+    pdf = Template(format="A4", orientation="P", title="Flashcards", author="Clinicog")
+    pdf.parse_csv("TemplateClinicog.csv", delimiter=';')
     pdf.add_page()
     pdf["logo"] = "logo.png"
     for index in range(min(8, len(cards))):

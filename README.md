@@ -1,4 +1,4 @@
-# ANKI cards generator
+# Sequential FlashCard generator
 
 This project allows for the generation of a formatted pdf file
 containing a set of flashcards with questions and answers in the
@@ -26,3 +26,10 @@ Properties are as followed :
 * multiline: None for single line (default), True to for multicells (multiple lines), False trims to exactly fit the space defined
 > Important for multiline: you should set coordinates for the cell containing the first line. It will then be repeated as 
 > many times as required to fit the whole text
+
+## Improvement
+
+* Find a way to input lists (with return to the line):
+  * Streamlit side : st.textarea
+  * FPDF side : 
+* See if it is possible to add an option to change the csv template : to modify size, alignment

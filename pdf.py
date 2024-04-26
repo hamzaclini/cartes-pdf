@@ -4,7 +4,7 @@ from io import BytesIO
 import create_pdf
 
 
-st.title("Anki-style Flashcard Generator")
+st.title("Sequential FlashCard Generator")
 st.subheader("Entrez 8 questions et 8 réponses pour générer les flashcards.")
 
 with st.form(key='cards_form'):
@@ -28,7 +28,7 @@ if st.button("Générer le PDF"):
         st.success("PDF généré. Vous pouvez maintenant le télécharger.")
         st.download_button(label="Téléchargement PDF",
                            data=pdf_file,
-                           file_name="anki_cards.pdf",
+                           file_name="seq_flashcards.pdf",
                            mime='application/pdf')
     else:
         st.error("Ajoutez suffisamment de cartes pour générer un PDF (min 8).")
