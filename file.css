@@ -1,0 +1,116 @@
+/* Add a background color to the body */
+body {
+    background-color: #f5f5f5;
+    font-family: Arial, sans-serif;
+}
+
+/* Style the header */
+header {
+    text-align: center;
+    padding: 20px;
+    background-color: #007bff;
+    color: white;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+/* Style the form */
+form {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: white;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+}
+
+/* Style the form inputs */
+form input,
+form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-size: 16px;
+}
+
+/* Style the form labels */
+form label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+/* Style the submit button */
+form button[type="submit"] {
+    background-color: #06407e;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+/* Style the submit button on hover */
+form button[type="submit"]:hover {
+    background-color: #0069d9;
+}
+
+/* Style the success message */
+.success {
+    color: #28a745;
+    font-weight: bold;
+    margin-top: 20px;
+    font-size: 18px;
+}
+
+/* Style the error message */
+.error {
+    color: #dc3545;
+    font-weight: bold;
+    margin-top: 20px;
+    font-size: 18px;
+}
+
+/* Style the download button */
+.download-button {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+}
+
+/* Style the download button on hover */
+.download-button:hover {
+    background-color: #218838;
+}
+
+/* Style the clear button */
+.clear-button {
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+}
+
+/* Style the clear button on hover */
+.clear-button:hover {
+    background-color: #c82333;
+}
