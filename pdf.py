@@ -3,7 +3,7 @@ from fpdf import FPDF
 from io import BytesIO
 import create_pdf
 
-st.title("générateur de cartes")
+st.title("Générateur de cartes")
 st.subheader("Entrez les questions et les réponses pour générer les cartes")
 
 with st.form(key='cards_form'):
@@ -41,3 +41,5 @@ else:
     for q, a in st.session_state["cards"]:
         st.write(f'Question : {q}')
         st.write(f'Réponse : {a}')
+
+st.write(st.session_state)
