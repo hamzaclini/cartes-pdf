@@ -8,7 +8,8 @@ if 'cards' not in st.session_state:
     st.session_state['cards'] = []
 
 if st.toggle('Utiliser un fichier Excel comme source'):
-    uploaded_file = st.file_uploader("Upload fichier Excel avec Q/R", type=['xlsx'])
+    uploaded_file = st.file_uploader("Upload fichier Excel avec Q/R", type=['xlsx'],
+                                     help="Header du fichier excel : deck, numeroInitialQuestion, question, reponse")
     if uploaded_file is not None:
         st.session_state['uploaded_file_name'] = uploaded_file.name
         data = pd.read_excel(uploaded_file).values.tolist()
