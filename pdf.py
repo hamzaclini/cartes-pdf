@@ -25,12 +25,12 @@ else:
             questions = [st.text_area(f"Question:", value=f'Q{i+1} : ', height=100) for i in range(8)]
         with col2:
             answers = [st.text_area(f"Réponses:", value=f'R{i+1} : ', height=100) for i in range(8)]
-    submitted = st.form_submit_button("Ajouter les cartes")
+        submitted = st.form_submit_button("Ajouter les cartes")
 
-    if submitted:
-        for question, answer in zip(questions, answers):
-            st.session_state['cards'].append((question, answer))
-        st.success("Cartes ajoutées !")
+        if submitted:
+            for question, answer in zip(questions, answers):
+                st.session_state['cards'].append((question, answer))
+            st.success("Cartes ajoutées !")
 
 if st.button("Générer le PDF"):
     if 'cards' in st.session_state and len(st.session_state['cards']) >= 1:
