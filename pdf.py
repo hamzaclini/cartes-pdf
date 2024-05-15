@@ -52,5 +52,3 @@ else:
     for q, a in st.session_state["cards"]:
         st.write(f'Question : {q}')
         st.write(f'Réponse : {a}')
-
-st.write(st.session_state)
