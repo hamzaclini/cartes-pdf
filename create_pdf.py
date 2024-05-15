@@ -7,7 +7,12 @@ import streamlit as st
 from fpdf import FPDF, Template
 from io import BytesIO
 
+def extend_length(cards):
+    if len(cards) < 8 :
+        cards.append(("Question", "Réponse"))
+    return cards
 def create_pdf(cards):
+    cards = extend_length(cards)
     tmpl = Template(format="A4", orientation="P", title="Flashcards", author="Clinicog")
     tmpl.parse_csv("TemplateClinicog2.csv", delimiter=';', encoding='utf-8')
     tmpl.add_page()
