@@ -8,7 +8,7 @@ from fpdf import FPDF, Template
 from io import BytesIO
 
 def extend_length(cards):
-    if len(cards) % 8 != 0:
+    while len(cards) % 8 != 0:
         cards.append(("", ""))
     return cards
 def create_pdf(cards):
