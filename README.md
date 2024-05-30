@@ -7,6 +7,9 @@ questions on one side and answer on the other side.
 
 This app can be accessed on streamlit [here](https://cartes-pdf.streamlit.app/)
 
+## Input - Excel or Word
+
+
 ## Use of FPDF package
 
 PDF formatting is defined in a .csv file using the template.py class from
@@ -33,7 +36,7 @@ Properties are as followed :
 
 ## Improvement
 
-* Find a way to input lists (with return to the line):
-  * Streamlit side : st.textarea
-  * FPDF side : 
+* Fix question numbering
+* Test REGEX with different possibilities
+* Center the text vertically on the card
 * See if it is possible to add an option to change the csv template : to modify size, alignment
