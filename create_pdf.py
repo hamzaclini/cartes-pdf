@@ -8,11 +8,12 @@ from fpdf import FPDF, Template
 from io import BytesIO
 
 def extend_length(cards):
-    if len(cards)  % 8 != 0:
+    if len(cards) % 8 != 0:
         cards.append(("", ""))
     return cards
 def create_pdf(cards):
     cards = extend_length(cards)
+    print(len(cards))
     tmpl = Template(format="A4", orientation="P", title="Flashcards", author="Clinicog")
     tmpl.parse_csv("TemplateClinicog2.csv", delimiter=';', encoding='utf-8')
     tmpl.pdf.add_font(family='DejaVuSans', style='', fname='font/DejaVuSans.ttf')
@@ -20,8 +21,9 @@ def create_pdf(cards):
     tmpl.pdf.add_font(family='Fireflysung', style='', fname='font/fireflysung.ttf')
     tmpl.pdf.set_fallback_fonts(["Eunjin", "Fireflysung"])
     # loop on series of 8 cards
-    for batch in range(len(cards) // 8):
+    for batch in range((len(cards) // 8)):
         batch_index = batch*8
+        print(batch_index)
         cards_batch = cards[batch_index:batch_index+8]
         tmpl.add_page()
         tmpl["logo"] = "logo.png"

@@ -27,12 +27,10 @@ if st.session_state["source"] == "excel":
 elif st.session_state["source"] == "word":
     uploaded_file = st.file_uploader("Upload fichier Word avec Q/R", type=['docx'],
                                      help="Verifier que les mots précédents les champs sont corrects (garder espace)")
-    col1, col2, col3 = st.columns([0.33, 0.33, 0.33],gap="small")
+    col1, col2 = st.columns([0.5, 0.5],gap="small")
     with col1:
-        prenum = st.text_input("Mot précédent le numéro de question", value="Fiche ", max_chars=None, key="pre-num")
-    with col2:
         prequestion = st.text_input("Mot précédent les questions", value="Question : ", max_chars=None, key="pre-question")
-    with col3:
+    with col2:
         prereponse = st.text_input("Mot précédent les réponses", value="Réponse : ", max_chars=None, key="pre-reponse")
     if uploaded_file is not None:
         st.session_state['uploaded_file_name'] = uploaded_file.name
@@ -42,23 +40,21 @@ elif st.session_state["source"] == "word":
         questions = []
         reponses = []
 
-        pattern = rf'{prenum}(\d+)\n{prequestion}(.*?){prereponse}(.*?)\n'
+        pattern = rf'{prequestion}(.*?){prereponse}(.*?)\n'
 
         text = '\n'.join([paragraph.text for paragraph in doc.paragraphs])
 
         for match in re.finditer(pattern, text, re.DOTALL):
-            num_question = int(match.group(1))
-            question = match.group(2)
-            reponse = match.group(3)
+            question = match.group(1)
+            reponse = match.group(2)
 
-            num_questions.append(num_question)
             questions.append(question)
             reponses.append(reponse)
 
-        data = {"numQuestion": num_questions, "Question": questions, "Reponse": reponses}
+        data = {"Question": questions, "Reponse": reponses}
         df = pd.DataFrame(data).values.tolist()
     if st.button("Ajouter les questions"):
-        for i, question, answer in df:
+        for i, (question, answer) in enumerate(df, start=1):
             st.session_state['cards'].append((f'Q{i} : {question}', f'R{i} : {answer}'))
 
 # Formulaire
